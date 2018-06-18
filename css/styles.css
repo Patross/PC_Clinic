@@ -21,10 +21,19 @@ body {
 	font-size: 19px;
 	font-weight: 700;
 	color: #eea849 !important;
+	float: left;
 }
 .nav .title a {
 	color: #eea849 !important;
 	text-decoration: none;
+}
+.nav .links a{
+	display: block;
+	height: 40px;
+	width: auto;
+	padding: 0px 10px;
+	color: tomato;
+	float: right;
 }
 .form {
 	display: block;
@@ -35,6 +44,7 @@ body {
 	margin-top: 50px;
 	border-radius: 5px;
 	padding-bottom: 1.25%;
+	margin-bottom: 20px;
 }
 .form input,
 select,
@@ -103,6 +113,25 @@ textarea {
 	line-height: 20px;
 	margin-top: 10px;
 	padding: 0px 15px;
+}
+.row{
+	padding: 0px 20px;
+	height: 40px;
+	line-height: 40px;
+}
+.row input,
+.row label {
+	line-height: 40px;
+	float: left;
+}
+.row label {
+	margin-left: 15px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
 }
 table {
 	width: 100%;
