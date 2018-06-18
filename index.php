@@ -34,7 +34,7 @@ require_once("includes/header.inc.php");
 				<option value="upgrade">Upgrade</option>
 			</select>
 			<input type="text"  placeholder="Item Serial Number" name="serial">
-			<input type="text"  placeholder="Passwords"          name="password">
+			<input type="text"  placeholder="Passwords"          name="passwords">
 			<textarea placeholder="Describe your issue..."></textarea>
 			<input type="submit" value="Next"                    name="submit">
 		</form>
