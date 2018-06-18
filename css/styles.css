@@ -46,6 +46,14 @@ body {
 	padding-bottom: 1.25%;
 	margin-bottom: 20px;
 }
+.form a {
+	color: tomato;
+	margin-left: 20px;
+	text-decoration: none;
+}
+.form a:hover {
+	text-decoration: underline;
+}
 .form input,
 select,
 textarea {

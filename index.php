@@ -24,6 +24,7 @@ if(isset($_GET['mode'])){
 		<?php if($mode == "NEW"): ?>
 		<form class="form" action="includes/booking.inc.php?mode=new" method="POST">
 			<div class="title">Submit Request</div>
+			<a href="index.php">Back</a>
 			<div class="subtitle">User Details</div>
 			<input type="text"  placeholder="First Name"         name="firstName">
 			<input type="text"  placeholder="Last Name"          name="lastName">
@@ -54,6 +55,7 @@ if(isset($_GET['mode'])){
 		<?php if($mode == "OLD"): ?>
 		<form class="form" action="includes/booking.inc.php" method="POST">
 			<div class="title">Submit Request</div>
+			<a href="index.php">Back</a>
 			<div class="subtitle">User Details</div>
 			<input type="email" placeholder="Email Address"      name="email">
 			<div class="subtitle">Request Details</div>
