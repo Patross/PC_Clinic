@@ -10,7 +10,7 @@ require_once("includes/header.inc.php");
 				<div class="title">PC Clinic</div>
 			</div>
 		</div>
-		<form class="form" method="POST">
+		<form class="form" action="booking.inc.php" method="POST">
 			<div class="title">Submit Request</div>
 			<div class="subtitle">User Details</div>
 			<input type="text"  placeholder="First Name"         name="firstName">
