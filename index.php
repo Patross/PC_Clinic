@@ -37,7 +37,7 @@ if(isset($_GET['mode'])){
 			<select name="priority">
 				<option hidden selected="selected">Priority</option>
 				<option value="low">Low</option>
-				<option value="medium">Medium</option>
+				<option value="normal" selected>Normal</option>
 				<option value="high">High</option>
 			</select>
 			<select name="jobType">
@@ -60,9 +60,8 @@ if(isset($_GET['mode'])){
 			<input type="email" placeholder="Email Address"      name="email">
 			<div class="subtitle">Request Details</div>
 			<select name="priority">
-				<option hidden selected="selected">Priority</option>
 				<option value="low">Low</option>
-				<option value="medium">Medium</option>
+				<option value="normal" selected>Normal</option>
 				<option value="high">High</option>
 			</select>
 			<select name="jobType">
