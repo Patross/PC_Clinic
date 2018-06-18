@@ -10,11 +10,7 @@ if(isset($_GET['mode'])){
 ?>
 <html>
     <body>
-		<div class="nav">
-			<div class="holder">
-				<div class="title">PC Clinic</div>
-			</div>
-		</div>
+		<?php require_once("includes/nav.inc.php"); ?>
 		<?php if(empty($mode)):?>
 		<div class="holder modeSelector">
 			<div class="title">Select new user or existing</div>

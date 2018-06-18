@@ -20,7 +20,11 @@ body {
 .nav .title {
 	font-size: 19px;
 	font-weight: 700;
-	color: #eea849;
+	color: #eea849 !important;
+}
+.nav .title a {
+	color: #eea849 !important;
+	text-decoration: none;
 }
 .form {
 	display: block;

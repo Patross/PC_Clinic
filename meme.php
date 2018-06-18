@@ -5,11 +5,7 @@ require_once("includes/header.inc.php");
 ?>
 <html>
     <body>
-		<div class="nav">
-			<div class="holder">
-				<div class="title">PC Clinic</div>
-			</div>
-		</div>
+		<?php require_once("includes/nav.inc.php"); ?>
 		<form class="form" action="booking.inc.php" method="POST">
 			<div class="title">Submit Request</div>
 			<div class="subtitle">User Details</div>
