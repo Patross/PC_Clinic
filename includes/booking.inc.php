@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
             if(filter_var($email, FILTER_VALIDATE_EMAIL)){
                 //GET USER DATA ONLY AND CREATE A USER IF IT DOESN NOT EXIST BASED
                 //ON THE EMAIL ADDRESS PROVIDED
-                $count = $conn->query('select count(*) from users')->fetchColumn(); 
+                $count = $conn->query("select id from users where `email_address` = '$email'")->fetchColumn(); 
                 if($count == 0){
 
                     $queryAddUser = $conn->prepare
