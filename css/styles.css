@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 body {
 	margin: 0 auto;
-	background: #f46b45;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #00B4DB;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 *{font-family: 'Roboto', sans-serif;}
 .holder {
@@ -20,11 +20,11 @@ body {
 .nav .title {
 	font-size: 19px;
 	font-weight: 700;
-	color: #eea849 !important;
+	color: #0083B0 !important;
 	float: left;
 }
 .nav .title a {
-	color: #eea849 !important;
+	color: #0083B0 !important;
 	text-decoration: none;
 }
 .nav .links a{
@@ -32,7 +32,7 @@ body {
 	height: 40px;
 	width: auto;
 	padding: 0px 10px;
-	color: tomato;
+	color: #00B4DB;
 	float: right;
 }
 .form {
@@ -47,7 +47,7 @@ body {
 	margin-bottom: 20px;
 }
 .form a {
-	color: tomato;
+	color: #446CB3;
 	margin-left: 20px;
 	text-decoration: none;
 }
@@ -90,31 +90,24 @@ textarea {
 	border-radius: 5px;
 	font-size: 18px;
 	transition: all .2s ease;
-	background: #f46b45;
-	background: -webkit-linear-gradient(to right, #eea849, #f46b45);
-	background: linear-gradient(to right, #eea849, #f46b45);
-}
-.form input[type="submit"]:active {
-	background: #f46b45;
-	background: -webkit-linear-gradient(to right, #f46b45, #f46b45);
-	background: linear-gradient(to right, #f46b45, #f46b45);
+	background: #00B4DB;
+	background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); 
+	background: linear-gradient(to right, #0083B0, #00B4DB);
 }
 .form input[type="submit"]:hover {
-	background: #eea849;
-	background: -webkit-linear-gradient(to right, #eea849, #eea849);
-	background: linear-gradient(to right, #eea849, #eea849);
+	background: linear-gradient(to right, #00B4DB, #00B4DB);
 }
 .form .title {
 	font-size: 23px;
 	text-align: center;
-	color: #f46b45;
+	color: #00B4DB;
 	height: 70px;
 	line-height: 70px;
 	font-size: 30px;
 	font-weight: 700;
 }
 .form .subtitle {
-	color: tomato;
+	color: #0083B0;
 	font-size: 15px;
 	text-transform: uppercase;
 	height: 20px;
@@ -189,7 +182,7 @@ tr:nth-child(odd) {
 	padding: 20px;
 }
 .modeSelector .title {
-	color: tomato;
+	color: #00B4DB;
 	font-weight: 700;
 	text-align: center;
 	font-size: 20px;
@@ -203,7 +196,7 @@ tr:nth-child(odd) {
 	text-align: center;
 	color: #fff;
 	text-decoration: none;
-	background: tomato;
+	background: #00B4DB;
 	border-radius: 5px;
 	float: left;
 	border: 1px solid RGBA(0,0,0,0.3);
@@ -212,10 +205,10 @@ tr:nth-child(odd) {
 	margin-right: 16px;
 }
 .modeSelector a:hover {
-	background: darksalmon;
+	background: #4183D7;
 }
 .modeSelector a:active {
-	background: darkorange;
+	background: #446CB3;
 }
 .buttons {
 	width: 320px;
