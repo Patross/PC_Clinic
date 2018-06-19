@@ -100,12 +100,6 @@
             
             <div class="subtitle"><strong>Network Check</strong></div>
 			
-			<div class="subtitle">Wired</div>
-			<div class="row">
-				<input type="checkbox" name="wiredConnection">
-				<label for="wiredConnection"> Wired Connection</label>
-            </div>
-			
 			<div class="subtitle">Wireless</div>
 			<div class="row">
 				<input type="checkbox" name="wirelessConnection">
@@ -113,32 +107,32 @@
             </div>
 			
 			<div class="row">
-				<input type="checkbox" name="internet">
-				<label for="internet">Internet</label>
+				<input type="checkbox" name="wirelessInternet">
+				<label for="wirelessInternet">Wireless Internet</label>
             </div>
 			
 			<div class="row">
-				<input type="checkbox" name="emailConfig">
-				<label for="emailConfig">E-mail Configuration</label>
+				<input type="checkbox" name="wirelessEmailConfig">
+				<label for="wirelessEmailConfig">Wireless E-mail Configuration</label>
             </div>
             
-			<div class="subtitle">Wireless</div>
+			<div class="subtitle">Wired</div>
             <div class="row">
-				<input type="checkbox" name="connection">
-				<label for="connection">Connection</label>
+				<input type="checkbox" name="wiredConnection">
+				<label for="wiredConnection">Wired Connection</label>
             </div>
 			
 			<div class="row">
-				<input type="checkbox" name="internet">
-				<label for="internet">Internet</label>
+				<input type="checkbox" name="wiredInternet">
+				<label for="wiredInternet">Wired Internet</label>
             </div>
 			
 			<div class="row">
-				<input type="checkbox" name="emailConfig">
-				<label for="emailConfig">E-mail Configuration</label>
+				<input type="checkbox" name="wiredEmailConfig">
+				<label for="wiredEmailConfig">Wired E-mail Configuration</label>
             </div>
             <div class="subtitle"><strong>Additional Information</strong></div>
-            <textarea rows="4" cols="50" placeholder="Additional Information"></textarea>
+            <textarea rows="4" cols="50" placeholder="Additional Information" name="additionalInformation"></textarea>
             
             <div class="subtitle"><strong>Status</strong></div>
 			<select name="status">
