@@ -1,5 +1,6 @@
 <?php
 require_once "dbh.inc.php";
+session_start();
 
 if(isset($_POST['submit'])){
     if( isset($_POST['firstName']) && !empty($_POST['firstName']) &&
@@ -11,7 +12,7 @@ if(isset($_POST['submit'])){
 		isset($_POST['priority']) && !empty($_POST['priority']) &&
 		isset($_POST['jobType']) && !empty($_POST['jobType']) &&
         isset($_POST['serial']) && !empty($_POST['serial']) &&
-        isset($_POST['passwords']) && !empty($_POST['passwords'] &&
+        isset($_POST['passwords']) && !empty($_POST['passwords']) &&
 		isset($_POST['issue']) && !empty($_POST['issue'])
         ){
         //Everything is set and has a value
@@ -22,8 +23,8 @@ if(isset($_POST['submit'])){
         $phone = $_POST['phone'];
         $address = $_POST['address'];
         $postcode = $_POST['postcode'];
-		$priority = $_POST['priority']
-		$jobType = $_POST['jobType']
+		$priority = $_POST['priority'];
+		$jobType = $_POST['jobType'];
         $serial = $_POST['serial'];
         $passwords = $_POST['passwords'];
 		$issue = $_POST['issue'];
@@ -47,8 +48,16 @@ if(isset($_POST['submit'])){
                         ':address' => $address,
                         ':postcode' => $postcode
                         //NEEDS TESTING
+						
                     ));
-                                                                        
+					$queryGetUser = $conn->prepare("SELECT `id` FROM users WHERE `email_address` = :email");
+					$queryGetUser->execute(array(
+						':email' => $email
+					
+					));
+					$result = $queryGetUser->fetch(PDO::FETCH_ASSOC);
+					$_SESSION['userId'] = $result['id'];
+                             						 
                 }else{
                     //USER ALREADY EXISTS
 					$queryGetUser = $conn->prepare("SELECT `id` FROM users WHERE `email_address` = :email");
@@ -57,18 +66,27 @@ if(isset($_POST['submit'])){
 					
 					));
 					$result = $queryGetUser->fetch(PDO::FETCH_ASSOC);
-					$userId = $result['id'];
-					
-					//
-					
-					
+					$_SESSION['userId'] = $result['id'];
+
                 }
-				
-            else{
-                //EMAIL INVALID
-            }
+				$userId = $_SESSION['userId'];
+				$queryAddBooking = $conn->prepare
+				("INSERT INTO booking(`user_id`,`date_booked`,`serial_number`,`passwords`,`priority`,`problem_description`) values(:user_id,:date,:serial_number,:passwords,:priority,:problem_description);");
+				$queryAddBooking->execute(array(
+					':user_id' => $userId,
+					':date' => @date("Y-m-d"), 
+					':serial_number' => $serial,
+					':passwords' => $passwords,
+					':priority' => $priority,
+					':problem_description' => $issue
+					//NEEDS TESTING
+				));	
         }else{
-            //PHONE INPUT CONTAINS NON NUMERICAL CHARACTERS
+            //EMAIL INVALID
         }
-    }
+    }else{
+		//PHONE INVALID
+	}
 }
+}
+session_unset();
