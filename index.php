@@ -48,7 +48,7 @@ if(isset($_GET['mode'])){
 			</select>
 			<input type="text"  placeholder="Item Serial Number" name="serial">
 			<input type="text"  placeholder="Passwords"          name="passwords">
-			<textarea placeholder="Describe your issue..."></textarea>
+			<textarea placeholder="Describe your issue..." 		 name="issue"></textarea>
 			<input type="submit" value="Next"                    name="submit">
 		</form>
 		<?php ENDIF; ?>
