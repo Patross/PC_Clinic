@@ -8,10 +8,12 @@
 		<?php require_once("includes/nav.inc.php"); ?>
 		<form class="form" method="POST">
 			<div class="title">Updates</div>
+            <div class="subtitle"><strong>Worked on details</strong></div>
 			<input type="text" placeholder="Worked on by" name="workedOn">
-			<input type="date" placeholder="Date of work carried out" name="dateCarriedOut">
             
-            <div class="subtitle">Hardware Check</div>
+			<input type="date" placeholder="Date of work carried out" name="dateCarriedOut">
+            <br>
+            <div class="subtitle"><strong>Hardware Check</strong></div>
 			
 			<div class="row">
 				<input type="checkbox" name="Motherboard">
@@ -77,7 +79,7 @@
                 <input type="checkbox" name="Mouse">
                 <label for="Mouse">Mouse</label>
             </div>
-            <div class="subtitle">Software Check</div>
+            <div class="subtitle"><strong>Software Check</strong></div>
 			
 			<div class="row">
 				<input type="checkbox" name="upToDate">
@@ -94,18 +96,9 @@
                 <label for="email">E-mail</label>
             </div>
             
-            <div class="subtitle">Network Check</div>
+            <div class="subtitle"><strong>Network Check</strong></div>
 			
-			<div class="row">
-				<input type="checkbox" name="wired">
-				<label for="wired">Wired</label>
-            </div>
-			
-			<div class="row">
-				<input type="checkbox" name="wireless">
-				<label for="wireless">Wireless</label>
-            </div>
-			
+			<div class="subtitle">Wired</div>
 			<div class="row">
 				<input type="checkbox" name="connection">
 				<label for="connection">Connection</label>
@@ -120,11 +113,26 @@
 				<input type="checkbox" name="emailConfig">
 				<label for="emailConfig">E-mail Configuration</label>
             </div>
+            
+			<div class="subtitle">Wireless</div>
+            <div class="row">
+				<input type="checkbox" name="connection">
+				<label for="connection">Connection</label>
+            </div>
 			
-            <div class="subtitle">Additional Information</div>
+			<div class="row">
+				<input type="checkbox" name="internet">
+				<label for="internet">Internet</label>
+            </div>
+			
+			<div class="row">
+				<input type="checkbox" name="emailConfig">
+				<label for="emailConfig">E-mail Configuration</label>
+            </div>
+            <div class="subtitle"><strong>Additional Information</strong></div>
             <textarea rows="4" cols="50" placeholder="Additional Information"></textarea>
             
-            <div class="subtitle">Status</div>
+            <div class="subtitle"><strong>Status</strong></div>
 			<div class="row">
 				<input type="radio" name="status">
 				<label for="ongGoing">On Going</lable>
