@@ -3,7 +3,7 @@
 require_once("includes/header.inc.php");
 require_once("includes/dbh.inc.php");
 
-if(isset($_GET['search'])){
+if(!empty($_GET['search'])){
 	$search = htmlspecialchars(strip_tags($_GET['search']));
 	$query = $conn->prepare("SELECT * FROM booking WHERE id LIKE :ref OR serial_number LIKE :serial");
 	$query->execute(array('ref' => $search,'serial' => $search));
