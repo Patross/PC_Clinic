@@ -18,18 +18,18 @@
             <div class="subtitle"><strong>Hardware Check</strong></div>
 			
 			<div class="row">
-				<input type="checkbox" name="Motherboard">
-				<label for="Motherboard">Motherboard</label>
+				<input type="checkbox" name="motherboard">
+				<label for="motherboard">Motherboard</label>
             </div>
             
 			<div class="row">
-				<input type="checkbox" name="Processor">
-				<label for="Processor">Processor</label>
+				<input type="checkbox" name="processor">
+				<label for="processor">Processor</label>
             </div>
             
 			<div class="row">
-				<input type="checkbox" name="RAM">
-				<label for="RAM">RAM</label>
+				<input type="checkbox" name="ram">
+				<label for="ram">RAM</label>
             </div>
             
             <div class="row">
@@ -38,48 +38,48 @@
             </div>
             
             <div class="row">
-                <input type="checkbox" name="Networkcard">
-                <label for="Networkcard">Network Card</label>
+                <input type="checkbox" name="networkCard">
+                <label for="networkCard">Network Card</label>
             </div>
             
             <div class="row">
-                <input type="checkbox" name="Soundcard">
-                <label for="Soundcard">Sound Card</label>
+                <input type="checkbox" name="soundCard">
+                <label for="soundCard">Sound Card</label>
             </div>
             
             <div class="row">
-                <input type="checkbox" name="Opticaldrive">
-                <label for="Opticaldrive">Opitcal Drive</label>
+                <input type="checkbox" name="opticalDrive">
+                <label for="opticalDrive">Opitcal Drive</label>
             </div>
             
             <div class="row">
-                <input type="checkbox" name="Powersupply">
-                <label for="Powersupply">Power Supply</label>
+                <input type="checkbox" name="powerSupply">
+                <label for="powerSupply">Power Supply</label>
             </div>
 			
 			<div class="row">
-				<input type="checkbox" name="HDD">
-				<label for="HDD">HDD</label>
+				<input type="checkbox" name="hdd">
+				<label for="hdd">HDD</label>
 			</div>
 			
             <div class="row">
-                <input type="checkbox" name="SSS">
-                <label for="SSD">SSD</label>
+                <input type="checkbox" name="ssd">
+                <label for="ssd">SSD</label>
             </div>
             
 			<div class="row">
-				<input type="checkbox" name="Monitor">
-				<label for="Monitor">Monitor</label>
+				<input type="checkbox" name="monitor">
+				<label for="monitor">Monitor</label>
             </div>
             
             <div class="row">
-                <input type="checkbox" name="Keyboard">
-                <label for="Keyboard">Keyboard</label>
+                <input type="checkbox" name="keyboard">
+                <label for="keyboard">Keyboard</label>
             </div>
             
             <div class="row">
-                <input type="checkbox" name="Mouse">
-                <label for="Mouse">Mouse</label>
+                <input type="checkbox" name="mouse">
+                <label for="mouse">Mouse</label>
             </div>
             <div class="subtitle"><strong>Software Check</strong></div>
 			
@@ -102,8 +102,14 @@
 			
 			<div class="subtitle">Wired</div>
 			<div class="row">
-				<input type="checkbox" name="connection">
-				<label for="connection">Connection</label>
+				<input type="checkbox" name="wiredConnection">
+				<label for="wiredConnection"> Wired Connection</label>
+            </div>
+			
+			<div class="subtitle">Wireless</div>
+			<div class="row">
+				<input type="checkbox" name="wirelessConnection">
+				<label for="wirelessConnection"> Wireless Connection</label>
             </div>
 			
 			<div class="row">
@@ -139,7 +145,7 @@
 				<option hidden selected="selected">Repair Status</option>
 				<option value="onGoing">On Going</option>
 				<option value="complete">Complete</option>
-				<option value="CantRepair">Can't Repair</option>
+				<option value="cantRepair">Can't Repair</option>
 			</select>
             
 			<br><br>
