@@ -1,6 +1,23 @@
 <?php
 
 require_once("includes/header.inc.php");
+require_once("includes/dbh.inc.php");
+
+if(isset($_GET['search'])){
+	$search = htmlspecialchars(strip_tags($_GET['search']));
+	$query = $conn->prepare("SELECT * FROM booking WHERE id LIKE :ref OR serial_number LIKE :serial");
+	$query->execute(array('ref' => $search,'serial' => $search));
+	$bookingData = $query->fetchAll();
+} else {
+	$query = $conn->prepare("SELECT * FROM booking");
+	$query->execute();
+	$bookingData = $query->fetchAll();
+}
+
+if(isset($_POST['submit'])){
+	$ref = htmlspecialchars(strip_tags($_POST['ref']));
+	header("Location: search.php?search=$ref");
+}
 
 ?>
 <html>
@@ -19,24 +36,26 @@ require_once("includes/header.inc.php");
 				<th>Priority</th>
 				<th>Serial Number</th>
 			  </tr>
+			  <?php
+			  
+			  for($i=0;$i<sizeOf($bookingData);$i++):
+					$id = $bookingData[$i]['user_id'];
+					$query = $conn->prepare("SELECT * FROM users WHERE id = :id");
+					$query->execute(array('id' => $id));
+					$userData = $query->fetch();
+			  
+			  ?>
 			  <tr>
-				<td>#123</td>
-				<td>Maria Anders</td>
-				<td><div class="low"></div></td>
-				<td>4UR45T6XRT576I967I</td>
+				<td><?php echo $bookingData[$i]['id']; ?></td>
+				<td><?php echo $userData['first_name']; ?> <?php echo $userData['last_name']; ?></td>
+				<td><div class="<?php echo $bookingData[$i]['priority']; ?>"></div></td>
+				<td><?php echo $bookingData[$i]['serial_number']; ?></td>
 			  </tr>
-			  <tr>
-				<td>#123</td>
-				<td>Jake Anders</td>
-				<td><div class="high"></div></td>
-				<td>456SEGS834YDR</td>
-			  </tr>
-			  <tr>
-				<td>#123</td>
-				<td>Bob Anders</td>
-				<td><div class="medium"></div></td>
-				<td>4R6R6K56IRTKFTKF</td>
-			  </tr>
+			  <?php
+			  
+			  ENDFOR;
+			  
+			  ?>
 			</table>
 		</div>
     </body>

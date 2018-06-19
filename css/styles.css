@@ -159,13 +159,13 @@ tr:nth-child(odd) {
 	content: 'High';
 	color: red;
 }
-.medium:after {
-	content: 'Medium';
+.normal:after {
+	content: 'Normal';
 	color: yellow;
 }
 .low:after ,
 .high:after,
-.medium:after {
+.normal:after {
 	display: block;
 	border-radius: 2px;
 	font-weight: 700;

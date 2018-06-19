@@ -132,4 +132,5 @@ if(isset($_POST['submit'])){
 }
 
 }
+header("Location: ../search.php");
 session_unset();
