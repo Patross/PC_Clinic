@@ -133,18 +133,12 @@
             <textarea rows="4" cols="50" placeholder="Additional Information"></textarea>
             
             <div class="subtitle"><strong>Status</strong></div>
-			<div class="row">
-				<input type="radio" name="status">
-				<label for="ongGoing">On Going</lable>
-            </div>
-			<div class="row">
-				<input type="radio" name="status">
-				<label for="complete">Complete</label>
-            </div>
-			<div class="row">
-				<input type="radio" name="status">
-				<label for="cantRepair">Can't Repair</label>
-			</div>
+			<select name="status">
+				<option hidden selected="selected">Stage</option>
+				<option value="onGoing">On Going</option>
+				<option value="complete">Complete</option>
+				<option value="CantRepair">Can't Repair</option>
+			</select>
             
 			<br><br>
             <input type="submit" value="Submit" name="submit">
