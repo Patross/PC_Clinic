@@ -10,28 +10,73 @@
 			<div class="title">Updates</div>
 			<input type="text" placeholder="Worked on by" name="workedOn">
 			<input type="date" placeholder="Date of work carried out" name="dateCarriedOut">
+            
             <div class="subtitle">Hardware Check</div>
+			
+			<div class="row">
+				<input type="checkbox" name="Motherboard">
+				<label for="Motherboard">Motherboard</label>
+            </div>
+            
+			<div class="row">
+				<input type="checkbox" name="Processor">
+				<label for="Processor">Processor</label>
+            </div>
+            
+			<div class="row">
+				<input type="checkbox" name="RAM">
+				<label for="RAM">RAM</label>
+            </div>
+            
+            <div class="row">
+                <input type="checkbox" name="GPU">
+                <label for="GPU">GPU</label>
+            </div>
+            
+            <div class="row">
+                <input type="checkbox" name="Networkcard">
+                <label for="Networkcard">Network Card</label>
+            </div>
+            
+            <div class="row">
+                <input type="checkbox" name="Soundcard">
+                <label for="Soundcard">Sound Card</label>
+            </div>
+            
+            <div class="row">
+                <input type="checkbox" name="Opticaldrive">
+                <label for="Opticaldrive">Opitcal Drive</label>
+            </div>
+            
+            <div class="row">
+                <input type="checkbox" name="Powersupply">
+                <label for="Powersupply">Power Supply</label>
+            </div>
 			
 			<div class="row">
 				<input type="checkbox" name="HDD">
 				<label for="HDD">HDD</label>
 			</div>
 			
+            <div class="row">
+                <input type="checkbox" name="SSS">
+                <label for="SSD">SSD</label>
+            </div>
+            
 			<div class="row">
 				<input type="checkbox" name="Monitor">
 				<label for="Monitor">Monitor</label>
             </div>
-			
-			<div class="row">
-				<input type="checkbox" name="RAM">
-				<label for="RAM">RAM</label>
+            
+            <div class="row">
+                <input type="checkbox" name="Keyboard">
+                <label for="Keyboard">Keyboard</label>
             </div>
-			
-			<div class="row">
-				<input type="checkbox" name="Motherboard">
-				<label for="Motherboard">Motherboard</label>
+            
+            <div class="row">
+                <input type="checkbox" name="Mouse">
+                <label for="Mouse">Mouse</label>
             </div>
-			
             <div class="subtitle">Software Check</div>
 			
 			<div class="row">
@@ -44,6 +89,11 @@
 				<label for="virusScanner">Virus Scanner</label>
             </div>
 			
+            <div class="row">
+                <input type="checkbox" name="email">
+                <label for="email">E-mail</label>
+            </div>
+            
             <div class="subtitle">Network Check</div>
 			
 			<div class="row">
