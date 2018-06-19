@@ -35,6 +35,7 @@ if(isset($_POST['submit'])){
 				<th>Full Name</th>
 				<th>Priority</th>
 				<th>Serial Number</th>
+				<th>Edit</th>
 			  </tr>
 			  <?php
 			  
@@ -50,6 +51,7 @@ if(isset($_POST['submit'])){
 				<td><?php echo $userData['first_name']; ?> <?php echo $userData['last_name']; ?></td>
 				<td><div class="<?php echo $bookingData[$i]['priority']; ?>"></div></td>
 				<td><?php echo $bookingData[$i]['serial_number']; ?></td>
+				<td><a href="workedOn.php?id=<?php echo $bookingData[$i]['id']; ?>">Edit</a></td>
 			  </tr>
 			  <?php
 			  
