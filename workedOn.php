@@ -1,12 +1,14 @@
 <?php
 
     require_once("includes/header.inc.php");
-	
+	if(isset($_GET['id'])){
+		$id = htmlspecialchars(strip_tags($_GET['id']));
+	}
 ?>
 <html>
     <body>
 		<?php require_once("includes/nav.inc.php"); ?>
-		<form class="form" method="POST">
+		<form class="form" action="includes/status.inc.php?id=<?php echo $id; ?>" method="POST">
 			<div class="title">Updates</div>
             <div class="subtitle"><strong>Worked on details</strong></div>
 			<input type="text" placeholder="Worked on by" name="workedOn">
