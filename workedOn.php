@@ -134,7 +134,7 @@
             
             <div class="subtitle"><strong>Status</strong></div>
 			<select name="status">
-				<option hidden selected="selected">Stage</option>
+				<option hidden selected="selected">Repair Status</option>
 				<option value="onGoing">On Going</option>
 				<option value="complete">Complete</option>
 				<option value="CantRepair">Can't Repair</option>
