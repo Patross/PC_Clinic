@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 		<div class="holder">
 			<form class="form" style="width: 100%;" action="" method="POST">
 				<div class="title">Search Requests</div>
-				<input type="text" placeholder="Reference Number" name="ref">
+				<input type="text" placeholder="Reference Number or Serial Number" name="ref">
 				<input type="submit" value="Search" name="submit"/>
 			</form>
 			<table>

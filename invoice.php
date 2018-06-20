@@ -37,5 +37,7 @@ if(isset($_GET['id'])){
 			
 			?>
 		</div>
+		<button id="print">Print Invoice</button>
+		<script src="scripts/print.js"></script>
     </body>
 </html>
