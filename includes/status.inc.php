@@ -92,11 +92,12 @@ if(isset($_POST['submit']) &&
                                                         `gpu` = :gpu, `network_card` = :network_card, `sound_card` = :sound_card, `optical_drive` = :optical_drive, `power_supply` = :power_supply, `hdd` = :hdd,
                                                         `ssd` = :ssd, `monitor` = :monitor, `keyboard` = :keyboard, `mouse` = :mouse, `up_to_date` = :up_to_date, `virus_scanner` = :virus_scanner, `email` = :email,
                                                         `wired_connection` = :wired_connection, `wired_internet` = :wired_internet, `wired_email_configuration` = :wired_email_configuration,
-                                                        `wireless_connection` = :wireless_connection, `wireless_internet` = :wireless_internet, `wireless_email_configuration` = :wireless_email_configuration;";
+                                                        `wireless_connection` = :wireless_connection, `wireless_internet` = :wireless_internet, `wireless_email_configuration` = :wireless_email_configuration,
+                                                        `additional_information` = :additional_information, `status` = :status WHERE `booking_id` = :booking_id;";
                 $queryUpdateStatus = $conn->prepare($queryUpdate);
-                $queryInsertStatus->execute(array(
+                $queryUpdateStatus->execute(array(
                         ":worked_on_by" => $workedOnby,
-                        ":date_worked" => $date,
+                        ":date" => $date,
                         ":motherboard" => $motherboard,
                         ":processor" => $processor,
                         ":ram" => $ram,
@@ -120,7 +121,8 @@ if(isset($_POST['submit']) &&
                         ":wireless_internet" => $wirelessInternet,
                         ":wireless_email_configuration" => $wirelessEmailConfiguration,
                         ":additional_information" => $additionalInformation,
-                        ":status" => $status
+                        ":status" => $status,
+                        ":booking_id" => $bookingId
                 ));
         }
 }
