@@ -136,11 +136,11 @@ if(isset($_POST['submit'])){
                 
             ));	
         }else{
-             header("Location: ../index.php?mode=NEW&error=email");
+             header("Location: ../index.php?mode=OLD&error=email");
              die();
         }
     }else{
-         header("Location: ../index.php?mode=NEW&error=empty");
+         header("Location: ../index.php?mode=OLD&error=empty");
          die();
     }
 }

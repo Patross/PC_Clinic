@@ -126,6 +126,7 @@ if(isset($_POST['submit']) &&
                         ":booking_id" => $bookingId
                 ));
         }
+        header("Location: ../workedOn.php?id=".$bookingId."&status=success");
 }else{
         $bookingId = $_GET['id'];
         header("Location: ../workedOn.php?id=".$bookingId."&error=empty");
