@@ -41,43 +41,86 @@ if(isset($_POST['submit']) &&
 
     $bookingId = $_GET['id'];
 
-    $queryInsert = "INSERT INTO job_status(`worked_on_by`,`booking_id`,`date_worked`,`motherboard`,`processor`,`ram`,`gpu`,`network_card`,`sound_card`,`optical_drive`,`power_supply`,`hdd`,
+    $count = $conn->query("select id from job_status where `booking_id` = '$bookingId'")->fetchColumn(); 
+        if($count == 0){
+                ///
+                /// INSERTING STATUS INTO THE DATABASE FOR THE FIRST TIME
+                ///
+                $queryInsert = "INSERT INTO job_status(`worked_on_by`,`booking_id`,`date_worked`,`motherboard`,`processor`,`ram`,`gpu`,`network_card`,`sound_card`,`optical_drive`,`power_supply`,`hdd`,
                                         `ssd`,`monitor`,`keyboard`,`mouse`,`up_to_date`,`virus_scanner`,`email`,`wired_connection`,`wired_internet`,`wired_email_configuration`,
                                         `wireless_connection`,`wireless_internet`,`wireless_email_configuration`,`additional_information`,`status`)
                                         
                                 values(:worked_on_by,:booking_id,:date,:motherboard,:processor,:ram,:gpu,:network_card,:sound_card,:optical_drive,:power_supply,:hdd,
                                         :ssd,:monitor,:keyboard,:mouse,:up_to_date,:virus_scanner,:email,:wired_connection,:wired_internet,:wired_email_configuration,
                                         :wireless_connection,:wireless_internet,:wireless_email_configuration,:additional_information,:status);";
-    $queryUpdateStatus = $conn->prepare($queryInsert);
-    $queryUpdateStatus->execute(array(
-        ":worked_on_by" => $workedOnby,
-        ":booking_id" => $bookingId,
-        ":date" => $date,
-        ":motherboard" => $motherboard,
-        ":processor" => $processor,
-        ":ram" => $ram,
-        ":gpu" => $gpu,
-        ":network_card" => $networkCard,
-        ":sound_card" => $soundCard,
-        ":optical_drive" => $opticalDrive,
-        ":power_supply" => $powerSupply,
-        ":hdd" => $hdd,
-        ":ssd" => $ssd,
-        ":monitor" => $monitor,
-        ":keyboard" => $keyboard,
-        ":mouse" => $mouse,
-        ":up_to_date" => $upToDate,
-        ":virus_scanner" => $virusScanner,
-        ":email" => $email,
-        ":wired_connection" => $wiredConnection,
-        ":wired_internet" => $wiredInternet,
-        ":wired_email_configuration" => $wiredEmailConfiguration,
-        ":wireless_connection" => $wirelessConnection,
-        ":wireless_internet" => $wirelessInternet,
-        ":wireless_email_configuration" => $wirelessEmailConfiguration,
-        ":additional_information" => $additionalInformation,
-        ":status" => $status
-    ));
+                $queryInsertStatus = $conn->prepare($queryInsert);
+                $queryInsertStatus->execute(array(
+                        ":worked_on_by" => $workedOnby,
+                        ":booking_id" => $bookingId,
+                        ":date" => $date,
+                        ":motherboard" => $motherboard,
+                        ":processor" => $processor,
+                        ":ram" => $ram,
+                        ":gpu" => $gpu,
+                        ":network_card" => $networkCard,
+                        ":sound_card" => $soundCard,
+                        ":optical_drive" => $opticalDrive,
+                        ":power_supply" => $powerSupply,
+                        ":hdd" => $hdd,
+                        ":ssd" => $ssd,
+                        ":monitor" => $monitor,
+                        ":keyboard" => $keyboard,
+                        ":mouse" => $mouse,
+                        ":up_to_date" => $upToDate,
+                        ":virus_scanner" => $virusScanner,
+                        ":email" => $email,
+                        ":wired_connection" => $wiredConnection,
+                        ":wired_internet" => $wiredInternet,
+                        ":wired_email_configuration" => $wiredEmailConfiguration,
+                        ":wireless_connection" => $wirelessConnection,
+                        ":wireless_internet" => $wirelessInternet,
+                        ":wireless_email_configuration" => $wirelessEmailConfiguration,
+                        ":additional_information" => $additionalInformation,
+                        ":status" => $status
+                ));
+        }else{
 
-
+                ///
+                /// UPDATING ALREADY EXISTING DATABASE RECORD
+                ///
+                $queryUpdate = "UPDATE job_status SET `worked_on_by` = :worked_on_by, `date_worked` = :date, `motherboard` = :motherboard, `processor` = :processor, `ram` = :ram,
+                                                        `gpu` = :gpu, `network_card` = :network_card, `sound_card` = :sound_card, `optical_drive` = :optical_drive, `power_supply` = :power_supply, `hdd` = :hdd,
+                                                        `ssd` = :ssd, `monitor` = :monitor, `keyboard` = :keyboard, `mouse` = :mouse, `up_to_date` = :up_to_date, `virus_scanner` = :virus_scanner, `email` = :email,
+                                                        `wired_connection` = :wired_connection, `wired_internet` = :wired_internet, `wired_email_configuration` = :wired_email_configuration,
+                                                        `wireless_connection` = :wireless_connection, `wireless_internet` = :wireless_internet, `wireless_email_configuration` = :wireless_email_configuration;";
+                $queryUpdateStatus = $conn->prepare($queryUpdate);
+                $queryInsertStatus->execute(array(
+                        ":worked_on_by" => $workedOnby,
+                        ":date_worked" => $date,
+                        ":motherboard" => $motherboard,
+                        ":processor" => $processor,
+                        ":ram" => $ram,
+                        ":gpu" => $gpu,
+                        ":network_card" => $networkCard,
+                        ":sound_card" => $soundCard,
+                        ":optical_drive" => $opticalDrive,
+                        ":power_supply" => $powerSupply,
+                        ":hdd" => $hdd,
+                        ":ssd" => $ssd,
+                        ":monitor" => $monitor,
+                        ":keyboard" => $keyboard,
+                        ":mouse" => $mouse,
+                        ":up_to_date" => $upToDate,
+                        ":virus_scanner" => $virusScanner,
+                        ":email" => $email,
+                        ":wired_connection" => $wiredConnection,
+                        ":wired_internet" => $wiredInternet,
+                        ":wired_email_configuration" => $wiredEmailConfiguration,
+                        ":wireless_connection" => $wirelessConnection,
+                        ":wireless_internet" => $wirelessInternet,
+                        ":wireless_email_configuration" => $wirelessEmailConfiguration,
+                        ":additional_information" => $additionalInformation,
+                        ":status" => $status
+                ));
+        }
 }
