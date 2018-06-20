@@ -12,8 +12,6 @@ create table booking(
     id int not null auto_increment primary key,
     user_id int,
     foreign key (user_id) REFERENCES users(id),
-    job_status_id int,
-    foreign key (status_id) references status(id),
 
     date_booked date,
     serial_number varchar(128) not null,
@@ -22,9 +20,12 @@ create table booking(
     problem_description varchar(2000)
 );
 
+
 create table job_status(
     id int not null auto_increment primary key,
     worked_on_by varchar(128) not null,
+    booking_id int,
+    foreign key (booking_id) references booking(id),
     date_worked date,
 
     motherboard varchar(3),
@@ -51,4 +52,4 @@ create table job_status(
     wireless_email_configuration varchar (3),
     additional_information varchar (1000),
     status varchar (20)
-)
+);
