@@ -83,10 +83,18 @@ if(isset($_GET['mode']) && $_GET['mode']=="new"){
                     ));	
             }else{
                 //EMAIL INVALID
+                header("Location: ../index.php?mode=NEW&error=email");
+                die();
             }
         }else{
             //PHONE INVALID
+            header("Location: ../index.php?mode=NEW&error=phone");
+            die();
         }
+    }else{
+        //NOT ALL FILLED IN
+        header("Location: ../index.php?mode=NEW&error=empty");
+        die();
     }
     }
 }
@@ -127,7 +135,13 @@ if(isset($_POST['submit'])){
                 ':problem_description' => $issue
                 
             ));	
+        }else{
+             header("Location: ../index.php?mode=NEW&error=email");
+             die();
         }
+    }else{
+         header("Location: ../index.php?mode=NEW&error=empty");
+         die();
     }
 }
 

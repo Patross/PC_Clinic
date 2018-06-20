@@ -1,6 +1,7 @@
 <?php
 
 require_once "dbh.inc.php";
+session_start();
 
 if(isset($_POST['submit']) &&
    isset($_POST['additionalInformation']) &&
@@ -125,4 +126,8 @@ if(isset($_POST['submit']) &&
                         ":booking_id" => $bookingId
                 ));
         }
+}else{
+        $bookingId = $_GET['id'];
+        header("Location: ../workedOn.php?id=".$bookingId."&error=empty");
+        die();
 }
