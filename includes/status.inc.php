@@ -1,4 +1,7 @@
 <?php
+
+require_once "dbh.inc.php";
+
 if(isset($_POST['submit']) &&
    isset($_POST['additionalInformation']) &&
    isset($_POST['status']) && !empty($_POST['status']) &&
@@ -39,7 +42,7 @@ if(isset($_POST['submit']) &&
                                         
                                 values(:motherboard,:processor,:ram,:gpu,:network_card,:sound_card,:optical_drive,:power_supply,:hdd,
                                         :ssd,:monitor,:keyboard,:mouse,:up_to_date,:virus_scanner,:email,:wired_connection,:wired_internet,:wired_email_config,
-                                        :wireless_connection,:wireless_internet,:wireless_email_config,:additional_information,:status) where ??"
+                                        :wireless_connection,:wireless_internet,:wireless_email_config,:additional_information,:status) where ??";
     $queryUpdateStatus = $conn->prepare($queryInsert);
     $queryUpdateStatus->execute(array(
        ":motherboard" => $motherboard,
