@@ -1,7 +1,14 @@
 //GETTING PRINT BUTTON AND MAKING IT PRINT
 let btnPrint = document.getElementById("print");
+let link = document.getElementById("link");
+link.style.visibility = "hidden";
 btnPrint.addEventListener("click",function(){
-    btnPrint.style.display = "none";
+
+    btnPrint.hidden = true;
+
     window.print();
-    btnPrint.style.display = "block";
+
+    btnPrint.hidden = false;
+    link.hidden  = false;
+
 })

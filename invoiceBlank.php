@@ -1,27 +1,13 @@
 <?php
 
-require_once("includes/dbh.inc.php");
 
-if(isset($_GET['id'])){
-	$id = htmlspecialchars(strip_tags($_GET['id']));
-	
-	$query = $conn->prepare("SELECT * FROM booking WHERE id = :id");
-	$query->execute(array('id' => $id));
-	$bookingData = $query->fetch();
-	
-	$query = $conn->prepare("SELECT * FROM users WHERE id = :id");
-	$query->execute(array('id' => $bookingData['user_id']));
-	$userData = $query->fetch();
-} else {
-	header("Location: search.php");
-}
 
 ?>
 <html>
     <body>
 		<div class="holder">
 			<?php
-				
+				error_reporting(0);
 				echo "<h1>PC CLINIC INVOICE - REF ".$bookingData['id']."</h1>";
 				
 				echo "<h2>YOUR DETAILS</h2>";
@@ -38,8 +24,6 @@ if(isset($_GET['id'])){
 			?>
 		</div>
 		<button id="print">Print Invoice</button>
-		<a id="link" href="invoiceBlank.php">Blank Invoice</a>
-
 		<script src="scripts/print.js"></script>
     </body>
 </html>

@@ -22,6 +22,7 @@ if(isset($_GET['mode'])){
 		</div>
 		<?php ENDIF; ?>
 		<?php if($mode == "NEW"): ?>
+		<button id="print">Print Booking</button>
 		<form class="form" action="includes/booking.inc.php?mode=new" method="POST">
 			<div class="title">Submit Request</div>
 			<a href="index.php">Back</a>
@@ -77,5 +78,6 @@ if(isset($_GET['mode'])){
 		</form>
 		<?php ENDIF; ?>
 		<script src="scripts/buttons.js"></script>
+		<script src="scripts/print.js"></script>
     </body>
 </html>
