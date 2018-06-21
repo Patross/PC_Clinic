@@ -18,7 +18,7 @@ link.addEventListener("click",function(){
     btnPrint.hidden = true;
 	link.hidden = true;
 
-    window.print();
+
 
     link.hidden  = false;
 	btnPrint.hidden = false;
