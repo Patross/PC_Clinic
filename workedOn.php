@@ -21,7 +21,7 @@
             <div class="subtitle"><strong>Worked on details</strong></div>
 			<input type="text" placeholder="Worked on by" name="workedOn" <?php echo isset($result['worked_on_by'])?"value='".$result['worked_on_by']."'":null;?>>
             
-			<input type="date" placeholder="Date of work carried out" name="dateCarriedOut" <?php echo "value='".date("Y-m-d")."'";?>>
+			<input type="date" placeholder="Date of work carried out" name="dateCarriedOut" <?php echo "value='".@date("Y-m-d")."'";?>>
             <br>
             <div class="subtitle"><strong>Hardware Check</strong></div>
 			

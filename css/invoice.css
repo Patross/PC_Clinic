@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+body {
+	margin: 0 auto;
+	-webkit-print-color-adjust: exact;
+}
+*{font-family: 'Roboto', sans-serif;}
+.invoice {
+	padding: 50px;
+	box-sizing: border-box;
+}
+.invoice img {
+	width: 120px;
+	float: right;
+	margin-bottom: 5px;
+}
+.invoice .details,
+.invoice .device {
+	width: 50%;
+	height: auto;
+	float: left;
+	overflow: hidden;
+}
+.invoice .repair {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.invoice-title {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	margin-bottom: 30px;
+}
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+}
+.footer {
+	width: 88%;
+	height: 100px;
+	margin-top: 50px;
+	font-size: 10px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+.box {
+	height: auto;
+	background: #ddd;
+	box-sizing: border-box;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #999999;
+}
+.box h2 {
+	margin: 0 !important;
+	padding: 10px 0px;
+}
+.box-top {
+	width: 49%;
+	float: left;
+}
+.box-spacer {
+	width: 100%;
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #999;
+}
+.box-top:nth-child(3){
+	margin-right: 2%;
+}
+.box-device {
+	height: 250px;
+}
+.box-exchange {
+	height: 350px;
+}
