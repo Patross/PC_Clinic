@@ -54,3 +54,12 @@ create table job_status(
     status varchar (20),
     finished varchar (3)
 );
+
+create table stock(
+
+    id int not null primary key auto_increment,
+    item_name varchar (128),
+    item_type varchar(128),
+    item_specs varchar(128),
+    item_quantity int
+);
