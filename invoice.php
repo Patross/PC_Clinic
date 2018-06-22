@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
 
 					echo "<h2>YOUR DETAILS</h2>";
 					echo "<b>Full name: </b>".$userData['first_name']." ".$userData['last_name']."<br><br>";
-					echo "<b>Email Address: </b>".$userData['email_address']."<br><br>";
+					echo "<b>Email: </b>".$userData['email_address']."<br><br>";
 					echo "<b>Address: </b>".$userData['address']."<br><br>";
 					echo "<b>Postcode: </b>".$userData['postcode']."<br><br>";
 				
@@ -74,14 +74,16 @@ if(isset($_GET['id'])){
 				<div class="box box-exchange">
 					<h2>REPAIR/EXCHANGE</h2>
 					<?php 
-					$keys = array_keys($jobData);
-					for($i=4;$i<sizeOf($jobData)/2-2;$i++){
-						if($jobData[$i] == "yes"){
-							echo $keys[$i*2].": ".$jobData[$i]."<br>";
+					if($jobData != false){
+						$keys = array_keys($jobData);
+						for($i=4;$i<sizeOf($jobData)/2-2;$i++){
+							if($jobData[$i] == "yes"){
+								echo $keys[$i*2].": ".$jobData[$i]."<br>";
+							}
 						}
+						echo "<div class='box-spacer'></div>";
+						echo "<b>Additional Information: </b><br>".$jobData['additional_information'];
 					}
-					echo "<div class='box-spacer'></div>";
-					echo "<b>Additional Information: </b><br>".$jobData['additional_information'];
 					?>
 				</div>
 				<div class="footer">

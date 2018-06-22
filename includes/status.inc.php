@@ -50,7 +50,7 @@ if(isset($_POST['submit']) &&
                 ///
                 $queryInsert = "INSERT INTO job_status(`worked_on_by`,`booking_id`,`date_worked`,`motherboard`,`processor`,`ram`,`gpu`,`network_card`,`sound_card`,`optical_drive`,`power_supply`,`hdd`,
                                         `ssd`,`monitor`,`keyboard`,`mouse`,`up_to_date`,`virus_scanner`,`email`,`wired_connection`,`wired_internet`,`wired_email_configuration`,
-                                        `wireless_connection`,`wireless_internet`,`wireless_email_configuration`,`additional_information`,`status`)
+                                        `wireless_connection`,`wireless_internet`,`wireless_email_configuration`,`additional_information`,`status`,`finished`)
                                         
                                 values(:worked_on_by,:booking_id,:date,:motherboard,:processor,:ram,:gpu,:network_card,:sound_card,:optical_drive,:power_supply,:hdd,
                                         :ssd,:monitor,:keyboard,:mouse,:up_to_date,:virus_scanner,:email,:wired_connection,:wired_internet,:wired_email_configuration,

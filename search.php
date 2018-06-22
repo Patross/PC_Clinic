@@ -14,6 +14,9 @@ if(!empty($_GET['search'])){
 	$bookingData = $query->fetchAll();
 }
 
+$query = $conn->query("SELECT finished FROM job_status");
+$finshed = $query->fetchAll();
+
 if(isset($_POST['submit'])){
 	$ref = htmlspecialchars(strip_tags($_POST['ref']));
 	header("Location: search.php?search=$ref");
@@ -37,6 +40,7 @@ if(isset($_POST['submit'])){
 				<th>Serial Number</th>
 				<th>Edit</th>
 				<th>Invoice</th>
+				<th>Finished</th>
 			  </tr>
 			  <?php
 			  
@@ -54,6 +58,7 @@ if(isset($_POST['submit'])){
 				<td><?php echo $bookingData[$i]['serial_number']; ?></td>
 				<td><a href="workedOn.php?id=<?php echo $bookingData[$i]['id']; ?>">Edit</a></td>
 				<td><a href='invoice.php?id=<?php echo $bookingData[$i]['id']; ?>'>Invoice</a></td>
+				<td><?php echo "<div class='".$finshed[$i]['finished']."'>".$finshed[$i]['finished']."</div>"; ?></td>
 			  </tr>
 			  <?php
 			  
