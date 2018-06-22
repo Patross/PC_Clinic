@@ -16,12 +16,12 @@ $stock = $query->fetchAll();
 				<div class="subtitle">Item name</div>
 				<input type="text" placeholder="Item name" name="itemName">
 				<div class="subtitle">Item type</div>
-				<input type="text" placeholder="Item name" name="itemType">
+				<input type="text" placeholder="Item type" name="itemType">
 				<div class="subtitle">Item specs</div>
-				<input type="text" placeholder="Item name" name="itemSpecs">
+				<input type="text" placeholder="Item specs" name="itemSpecs">
 				<div class="subtitle">Item quantity</div>
-				<input type="text" placeholder="Item name" name="itemQuantity">
-				<input type="submit" value="Next"                    name="submit">
+				<input type="text" placeholder="Item quantity" name="itemQuantity">
+				<input type="submit" value="Add"                    name="submit">
 			</form>
 			<table>
 				<tr>
