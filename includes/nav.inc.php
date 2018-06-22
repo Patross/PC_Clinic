@@ -2,6 +2,7 @@
 	<div class="holder">
 		<div class="title"><a href="index.php">PC Clinic</a></div>
 		<div class="links">
+			<a href="stock.php">Stock</a>
 			<a href="index.php?mode=NEW">Blank Booking</a>
 			<a href="workedOnBlank.php">Blank Checklist</a>
 			<a href="invoiceBlank.php">Blank Invoice</a>

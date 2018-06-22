@@ -37,8 +37,12 @@ $stock = $query->fetchAll();
 					<td><?php echo $stock[$i]['item_name']?></td>
 					<td><?php echo $stock[$i]['item_type']?></td>
 					<td><?php echo $stock[$i]['item_specs']?></td>
-					<td><?php echo $stock[$i]['item_quantity']?></td>
+					<td><?php echo "<form action='includes/quantity.inc.php?id=".$stock[$i]['id']."' method='post'>
+										<input type='number' name='itemQuantity' value='".$stock[$i]['item_quantity']."'/>
+										<input type='submit'name='submit' value='submit' hidden />
+									</form>"; ?></td>
 				</tr>
+				<!--$stock[$i]['item_quantity']  -->
 				<?php
 					ENDFOR;
 				?>
