@@ -51,5 +51,6 @@ create table job_status(
     wireless_internet varchar (3),
     wireless_email_configuration varchar (3),
     additional_information varchar (1000),
-    status varchar (20)
+    status varchar (20),
+    finished varchar (3)
 );

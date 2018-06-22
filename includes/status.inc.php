@@ -35,6 +35,7 @@ if(isset($_POST['submit']) &&
     $wirelessConnection = isset($_POST['wirelessConnection'])?"yes":"no";
     $wirelessInternet = isset($_POST['wirelessInternet'])?"yes":"no";
     $wirelessEmailConfiguration = isset($_POST['wirelessEmailConfig'])?"yes":"no";
+    $finished = isset($_POST['finished'])?"yes":"no";
 
 
     $additionalInformation = $_POST['additionalInformation'];
@@ -53,7 +54,7 @@ if(isset($_POST['submit']) &&
                                         
                                 values(:worked_on_by,:booking_id,:date,:motherboard,:processor,:ram,:gpu,:network_card,:sound_card,:optical_drive,:power_supply,:hdd,
                                         :ssd,:monitor,:keyboard,:mouse,:up_to_date,:virus_scanner,:email,:wired_connection,:wired_internet,:wired_email_configuration,
-                                        :wireless_connection,:wireless_internet,:wireless_email_configuration,:additional_information,:status);";
+                                        :wireless_connection,:wireless_internet,:wireless_email_configuration,:additional_information,:status,:finished);";
                 $queryInsertStatus = $conn->prepare($queryInsert);
                 $queryInsertStatus->execute(array(
                         ":worked_on_by" => $workedOnby,
@@ -82,7 +83,8 @@ if(isset($_POST['submit']) &&
                         ":wireless_internet" => $wirelessInternet,
                         ":wireless_email_configuration" => $wirelessEmailConfiguration,
                         ":additional_information" => $additionalInformation,
-                        ":status" => $status
+                        ":status" => $status,
+                        ":finished" => $finished
                 ));
         }else{
 
@@ -94,7 +96,7 @@ if(isset($_POST['submit']) &&
                                                         `ssd` = :ssd, `monitor` = :monitor, `keyboard` = :keyboard, `mouse` = :mouse, `up_to_date` = :up_to_date, `virus_scanner` = :virus_scanner, `email` = :email,
                                                         `wired_connection` = :wired_connection, `wired_internet` = :wired_internet, `wired_email_configuration` = :wired_email_configuration,
                                                         `wireless_connection` = :wireless_connection, `wireless_internet` = :wireless_internet, `wireless_email_configuration` = :wireless_email_configuration,
-                                                        `additional_information` = :additional_information, `status` = :status WHERE `booking_id` = :booking_id;";
+                                                        `additional_information` = :additional_information, `status` = :status, `finished` = :finished WHERE `booking_id` = :booking_id;";
                 $queryUpdateStatus = $conn->prepare($queryUpdate);
                 $queryUpdateStatus->execute(array(
                         ":worked_on_by" => $workedOnby,
@@ -123,6 +125,7 @@ if(isset($_POST['submit']) &&
                         ":wireless_email_configuration" => $wirelessEmailConfiguration,
                         ":additional_information" => $additionalInformation,
                         ":status" => $status,
+                        ":finished" => $finished,
                         ":booking_id" => $bookingId
                 ));
         }

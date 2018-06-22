@@ -149,6 +149,11 @@
 				<option <?php echo isset($result['status'])&&$result['status']=="complete"?"selected ":null?> value="complete">Complete</option>
 				<option <?php echo isset($result['status'])&&$result['status']=="cantRepair"?"selected ":null?>value="cantRepair">Can't Repair</option>
 			</select>
+
+            <div class="row">
+				<input type="checkbox" name="finished" <?php echo $result['finished']=="yes"?"checked":null; ?>>
+                <label for="finished">Finished?</label>
+            </div>
             
 			<br><br>
             <input type="submit" value="Submit" name="submit">
