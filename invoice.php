@@ -72,13 +72,13 @@ if(isset($_GET['id'])){
 					
 				</div>
 				<div class="box box-exchange">
-					<h2>REPAIR/EXCHANGE</h2>
-					<?php 
+					<h2>REPAIRED/EXCHANGED PARTS</h2>
+					| <?php 
 					if($jobData != false){
 						$keys = array_keys($jobData);
 						for($i=4;$i<sizeOf($jobData)/2-2;$i++){
 							if($jobData[$i] == "yes"){
-								echo $keys[$i*2].": ".$jobData[$i]."<br>";
+								echo $keys[$i*2]." | ";
 							}
 						}
 						echo "<div class='box-spacer'></div>";
