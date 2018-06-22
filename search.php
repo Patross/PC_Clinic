@@ -15,7 +15,7 @@ if(!empty($_GET['search'])){
 }
 
 $query = $conn->query("SELECT finished FROM job_status");
-$finshed = $query->fetchAll();
+$finished = $query->fetchAll();
 
 if(isset($_POST['submit'])){
 	$ref = htmlspecialchars(strip_tags($_POST['ref']));
@@ -58,7 +58,11 @@ if(isset($_POST['submit'])){
 				<td><?php echo $bookingData[$i]['serial_number']; ?></td>
 				<td><a href="workedOn.php?id=<?php echo $bookingData[$i]['id']; ?>">Edit</a></td>
 				<td><a href='invoice.php?id=<?php echo $bookingData[$i]['id']; ?>'>Invoice</a></td>
-				<td><?php echo "<div class='".$finshed[$i]['finished']."'>".$finshed[$i]['finished']."</div>"; ?></td>
+				<?php if(isset($finished[$i]['finished'])): ?>
+				<td><?php echo "<div class='".$finished[$i]['finished']."'>".$finished[$i]['finished']."</div>"; ?></td>
+				<?php ELSE: ?>
+				<td><div class="no">no</div></td>
+				<?php ENDIF; ?>
 			  </tr>
 			  <?php
 			  

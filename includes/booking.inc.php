@@ -121,20 +121,25 @@ if(isset($_POST['submit'])){
             
             ));
             $result = $queryGetUser->fetch(PDO::FETCH_ASSOC);
-            $_SESSION['userId'] = $result['id'];
-            $userId = $_SESSION['userId'];
-            
-            $queryAddBooking = $conn->prepare
-            ("INSERT INTO booking(`user_id`,`date_booked`,`serial_number`,`passwords`,`priority`,`problem_description`) values(:user_id,:date,:serial_number,:passwords,:priority,:problem_description);");
-            $queryAddBooking->execute(array(
-                ':user_id' => $userId,
-                ':date' => @date("Y-m-d"), 
-                ':serial_number' => $serial,
-                ':passwords' => $passwords,
-                ':priority' => $priority,
-                ':problem_description' => $issue
-                
-            ));	
+			if($result != false){
+				$_SESSION['userId'] = $result['id'];
+				$userId = $_SESSION['userId'];
+				
+				$queryAddBooking = $conn->prepare
+				("INSERT INTO booking(`user_id`,`date_booked`,`serial_number`,`passwords`,`priority`,`problem_description`) values(:user_id,:date,:serial_number,:passwords,:priority,:problem_description);");
+				$queryAddBooking->execute(array(
+					':user_id' => $userId,
+					':date' => @date("Y-m-d"), 
+					':serial_number' => $serial,
+					':passwords' => $passwords,
+					':priority' => $priority,
+					':problem_description' => $issue
+					
+				));	
+			} else {
+				header("Location: ../index.php?mode=OLD&error=NOTFOUND");
+				die();
+			}
         }else{
              header("Location: ../index.php?mode=OLD&error=email");
              die();
